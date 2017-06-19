@@ -18,14 +18,11 @@ before_install:
 install:
   - travis_retry composer install --no-interaction --prefer-dist
 
-before_script:
-  - mkdir -p build/logs
-
 script:
-  - ./vendor/bin/parallel-lint src tests
-  - ./vendor/bin/phpunit --verbose --coverage-clover build/logs/clover.xml
-  - ./vendor/bin/phpcs src tests --standard=psr2 -sp
-  - ./vendor/bin/phpspec run
+  - php ./vendor/bin/parallel-lint src tests
+  - php ./vendor/bin/phpunit --verbose
+  - php ./vendor/bin/phpcs src tests --standard=psr2 -sp
+  - php ./vendor/bin/phpspec run
 
 after_success:
   - travis_retry php vendor/bin/coveralls
