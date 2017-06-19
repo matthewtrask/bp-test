@@ -19,10 +19,16 @@ class UserTest extends TestCase
      */
     private $name;
 
+    /**
+     * @var string
+     */
+    private $email;
+
     public function setup()
     {
         $this->name = 'Matt';
-        $this->user = new User($this->name);
+        $this->email = 'mjftrask@gmail.com';
+        $this->user = new User($this->name, $this->email);
     }
 
     public function testCanCreateInstanceOfUser()
@@ -33,15 +39,5 @@ class UserTest extends TestCase
     public function testCanGetName()
     {
         $this->assertEquals('Matt', $this->user->getName());
-    }
-
-    public function testWillThrowExceptionForNonString()
-    {
-        $this->expectException(InvalidArgumentException::class);
-    }
-
-    public function testStringIsReturnType()
-    {
-        $this->assertTrue(is_string($this->user->getName()));
     }
 }
