@@ -26,10 +26,10 @@
         "php": "^7.0"
     },
     "scripts": {
-        "lint": "./vendor/bin/parallel-lint src tests",
-        "phpunit": "./vendor/bin/phpunit --verbose --colors=always",
-        "phpcs": "./vendor/bin/phpcs src tests --standard=psr2 -sp --colors",
-        "phpspec": "./vendor/bin/phpspec run",
+        "lint": "bin/parallel-lint src tests",
+        "phpunit": "bin/phpunit --verbose --colors=always",
+        "phpcs": "bin/phpcs src tests --standard=psr2 -sp --colors",
+        "phpspec": "bin/phpspec run",
         "test": [
             "@lint",
             "@phpunit",

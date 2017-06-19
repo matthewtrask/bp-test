@@ -3,6 +3,10 @@
     {
       "name": "Matt Trask",
       "email": "mjftrask@gmail.com"
+    },
+    {
+      "name": "Sebastian Bergmann",
+      "email": "sebastian@phpunit.de"
     }
   ]
 }
