@@ -11,9 +11,15 @@ class User
      */
     private $name;
 
-    public function __construct(string $name)
+    /**
+     * @var string
+     */
+    private $email;
+
+    public function __construct(string $name, string $email)
     {
         $this->isString($name);
+        $this->isString($email);
         $this->setName($name);
         $this->setEmail($email);
     }
@@ -30,7 +36,12 @@ class User
 
     private function setEmail($email)
     {
+        $this->email = $email;
+    }
 
+    public function getEmail() : string
+    {
+        return $this->email;
     }
 
     private function isString($name)
